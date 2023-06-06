@@ -3,16 +3,9 @@
 //function que pide datos a usuario y los almacena.
 function datosUsuario() {
     let ingresoNombre = prompt(`Ingrese su nombre completo`)
-    ingresoNombre = validarInput(ingresoNombre)
-
-    let ingresoDni = prompt(`Ingrese su DNI`)
-    ingresoDni = validarInput(ingresoDni)
-
+    let ingresoDni = parseInt(prompt(`Ingrese su DNI`))
     let ingresoTelefono = parseInt(prompt(`Ingrese su numero de telefono`))
-    ingresoTelefono = validarInput(ingresoTelefono)
-
     let edad = parseInt(prompt("Ingresa cuantos años tienes"))
-    edad = validarInput(edad)
 
 
     if (edad > 21) {
@@ -32,15 +25,7 @@ datosUsuario()
 
 
 //funcion para validar los datos 
-function validarInput(valor) {
 
-    while (isNaN(valor) || valor === undefined || valor === null || valor === "") {
-        alert("Debes ingresar un valor acorde a lo solicitado");
-
-        valor = parseFloat(prompt("Ingresa un valor nuevamente"));
-    }
-    return valor;
-}
 //muestra los datos almacenados en la funcion anterior.
 function verificacionDatos(nombre, dni, telefono, edad) {
     alert(`Sus datos son los siguientes: Su nombre es ${nombre}, Dni: ${dni},su telefono:${telefono},tu edad es ${edad}.`)
@@ -87,13 +72,12 @@ do {
 function simulacionPrestamos() {
 
     let montoPretendido = parseInt(prompt(`Ingrese el monto del préstamo en pesos:`))
-    montoPretendido = validarInput(montoPretendido)
+    
 
     let tasaIntereses = parseFloat(prompt(`Ingrese la tasa de interés:`))
-    tasaIntereses = validarInput(tasaIntereses)
+    
 
     let plazoMeses = parseInt(prompt(`Ingrese el plazo en meses:`))
-    plazoMeses = validarInput(plazoMeses)
 
 
     if (montoPretendido == 0 || montoPretendido < 10000) {
@@ -113,13 +97,9 @@ function simulacionPrestamos() {
 
 function cuotaMes() {
     let montoIngresado = parseFloat(prompt(`Ingrese el monto del préstamo en pesos:`))
-    montoIngresado = validarInput(montoIngresado)
-
     let tasaIntereses = parseFloat(prompt(`Ingrese la tasa de interés:`))
-    tasaIntereses = validarInput(tasaIntereses)
-
     let plazoMeses = parseInt(prompt(`Ingrese el plazo de meses en numeros:`))
-    plazoMeses = validarInput(plazoMeses)
+
 
     const tasaMensual = tasaIntereses / 12 / 100;
 
